@@ -30,6 +30,3 @@ captured_at: "2026-06-30"
 - Subheadline lines:
   1. Reach millions of consumers who are using AI
   2. to discover new products and brands
-- Alignment: Centered
-- Emphasis: Headline line 2 is a dynamic/rotating platform name and appears at headline scale.
-- Headline/subheadline relationship: The headline names the outcome, while the subheadline explains the channel: consumers using AI to discover products and brands.
