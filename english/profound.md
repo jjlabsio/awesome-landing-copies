@@ -22,8 +22,14 @@ captured_at: "2026-06-30"
 - Headline: Marketing agents to win in Claude
 - Subheadline: Reach millions of consumers who are using AI to discover new products and brands
 
-## Placement
+## Line Layout
 
-- Arrangement: Centered hero. The headline is split across two large lines, with the dynamic platform name on the second line.
-- Emphasis: `Claude` appears at headline scale and looks like a rotating/dynamic word.
+- Headline lines:
+  1. Marketing agents to win in
+  2. Claude
+- Subheadline lines:
+  1. Reach millions of consumers who are using AI
+  2. to discover new products and brands
+- Alignment: Centered
+- Emphasis: Headline line 2 is a dynamic/rotating platform name and appears at headline scale.
 - Headline/subheadline relationship: The headline names the outcome, while the subheadline explains the channel: consumers using AI to discover products and brands.

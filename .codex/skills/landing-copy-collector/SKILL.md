@@ -1,6 +1,6 @@
 ---
 name: landing-copy-collector
-description: Capture minimal landing page copy references into this project's language folders. Use when the user provides one or more landing page URLs and wants the service name, one-line service summary, category, link, headline, subheadline, SEO title/meta description, and brief notes about how the headline/subheadline are arranged and emphasized on screen, saved as Markdown for later landing page copywriting reference.
+description: Capture minimal landing page copy references into this project's language folders. Use when the user provides one or more landing page URLs and wants the service name, one-line service summary, category, link, headline, subheadline, SEO title/meta description, and structured line-by-line notes about headline/subheadline breaks and emphasis, saved as Markdown for later landing page copywriting reference.
 ---
 
 # Landing Copy Collector
@@ -23,10 +23,12 @@ Use this skill to turn landing page URLs into minimal Markdown reference cards. 
 5. Capture only the main hero copy:
    - Primary headline exactly as visible
    - Subheadline/supporting line exactly as visible
-6. Inspect only how the headline and subheadline are presented. Record brief notes about:
-   - Arrangement: centered, left-aligned, split across lines, paired with rotating/dynamic words, placed above/below visual
-   - Emphasis: enlarged words, color highlights, bolding, line breaks, badges/eyebrows directly tied to the headline
-   - Relationship: how the subheadline supports, narrows, or expands the headline
+6. Inspect only how the headline and subheadline are presented. Record line breaks structurally:
+   - `Headline lines`: one item per visual line, in displayed order
+   - `Subheadline lines`: one item per visual line, in displayed order
+   - `Alignment`: centered, left, right, or mixed
+   - `Emphasis`: line-specific emphasis such as larger line, highlighted word, bold word, dynamic/rotating term, badge/eyebrow directly attached to the hero copy
+   - `Relationship`: how the subheadline supports, narrows, or expands the headline
 7. Save one Markdown file per URL using a stable slug:
    - `english/{service-slug}.md`
    - `korean/{service-slug}.md`
@@ -61,9 +63,15 @@ captured_at: "YYYY-MM-DD"
 - Headline: ...
 - Subheadline: ...
 
-## Placement
+## Line Layout
 
-- Arrangement: ...
+- Headline lines:
+  1. ...
+  2. ...
+- Subheadline lines:
+  1. ...
+  2. ...
+- Alignment: ...
 - Emphasis: ...
 - Headline/subheadline relationship: ...
 ```
@@ -73,7 +81,8 @@ captured_at: "YYYY-MM-DD"
 - Write `one_liner` as a compact sentence that explains what the service does and who it helps. Prefer observable claims from the page; if the page is vague, keep the wording conservative.
 - Keep `category` short and reusable so future prompts can group similar services.
 - Preserve visible copy exactly for headline and subheadline.
-- Keep placement notes minimal and limited to headline/subheadline arrangement and emphasis. Do not add broader marketing analysis, CTA notes, product UI descriptions, copy takeaways, or browsing/debug logs.
+- Preserve visual line breaks in `Line Layout`. If the browser wraps text differently by viewport, use the desktop hero layout unless the user asks otherwise.
+- Keep layout notes minimal and limited to headline/subheadline line breaks, alignment, and emphasis. Do not add broader marketing analysis, CTA notes, product UI descriptions, copy takeaways, or browsing/debug logs.
 - Do not invent missing metadata or copy. Use `Not found` when unavailable.
-- If a headline contains rotating/dynamic words, capture the observed variant and mention that it appears dynamic in `Placement`.
+- If a headline contains rotating/dynamic words, capture the observed variant as its own line or inline phrase exactly as displayed and mention that it appears dynamic in `Emphasis`.
 - After writing the file, tell the user the saved path and summarize the captured headline plus one notable presentation pattern.
