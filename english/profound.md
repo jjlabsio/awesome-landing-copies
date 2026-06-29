@@ -30,3 +30,10 @@ captured_at: "2026-06-30"
 - Subheadline lines:
   1. Reach millions of consumers who are using AI
   2. to discover new products and brands
+
+## Emphasis
+
+- Headline:
+  - "Claude" - displayed as the second headline line at headline scale with a distinct icon-like mark before the word
+- Subheadline:
+  - None

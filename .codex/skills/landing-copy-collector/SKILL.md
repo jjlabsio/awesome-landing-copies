@@ -1,6 +1,6 @@
 ---
 name: landing-copy-collector
-description: Capture minimal landing page copy references into this project's language folders. Use when the user provides one or more landing page URLs and wants the service name, one-line service summary, category, link, headline, subheadline, SEO title/meta description, and structured line-by-line notes about headline/subheadline visual line breaks, saved as Markdown for later landing page copywriting reference.
+description: Capture minimal landing page copy references into this project's language folders. Use when the user provides one or more landing page URLs and wants the service name, one-line service summary, category, link, headline, subheadline, SEO title/meta description, structured line-by-line notes about headline/subheadline visual line breaks, and visible font weight or color emphasis, saved as Markdown for later landing page copywriting reference.
 ---
 
 # Landing Copy Collector
@@ -26,7 +26,10 @@ Use this skill to turn landing page URLs into minimal Markdown reference cards. 
 6. Inspect only the visual line breaks of the headline and subheadline. Record them structurally:
    - `Headline lines`: one item per visual line, in displayed order
    - `Subheadline lines`: one item per visual line, in displayed order
-7. Save one Markdown file per URL using a stable slug:
+7. Inspect visible emphasis only within the headline and subheadline:
+   - Record words or phrases emphasized by color, font weight, gradient, underline, or noticeably different style
+   - Use `None` when no specific word or phrase is emphasized
+8. Save one Markdown file per URL using a stable slug:
    - `english/{service-slug}.md`
    - `korean/{service-slug}.md`
    Use lowercase hyphen-case. If a filename exists, append `-2`, `-3`, etc. rather than overwriting.
@@ -68,6 +71,13 @@ captured_at: "YYYY-MM-DD"
 - Subheadline lines:
   1. ...
   2. ...
+
+## Emphasis
+
+- Headline:
+  - "..." - color/font weight/gradient/underline/etc.
+- Subheadline:
+  - None
 ```
 
 ## Quality Rules
@@ -76,7 +86,8 @@ captured_at: "YYYY-MM-DD"
 - Keep `category` short and reusable so future prompts can group similar services.
 - Preserve visible copy exactly for headline and subheadline.
 - Preserve visual line breaks in `Line Layout`. If the browser wraps text differently by viewport, use the desktop hero layout unless the user asks otherwise.
-- Keep `Line Layout` limited to `Headline lines` and `Subheadline lines`. Do not add alignment, emphasis, relationship, broader marketing analysis, CTA notes, product UI descriptions, copy takeaways, or browsing/debug logs.
+- Keep `Line Layout` limited to `Headline lines` and `Subheadline lines`.
+- Keep `Emphasis` limited to emphasized words or phrases inside the headline and subheadline, plus the visible emphasis method. Do not add alignment, relationship, broader marketing analysis, CTA notes, product UI descriptions, copy takeaways, or browsing/debug logs.
 - Do not invent missing metadata or copy. Use `Not found` when unavailable.
-- If a headline contains rotating/dynamic words, capture only the observed variant exactly as displayed in the relevant headline line.
+- If a headline contains rotating/dynamic words, capture the observed variant exactly as displayed in the relevant headline line, and include it in `Emphasis` only if it is visually emphasized by style.
 - After writing the file, tell the user the saved path and summarize the captured headline.
