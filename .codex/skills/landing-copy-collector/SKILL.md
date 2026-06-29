@@ -1,13 +1,13 @@
 ---
 name: landing-copy-collector
-description: Capture landing page copy into this project's language folders. Use when the user provides one or more landing page URLs and wants the service name, one-line service summary, category, link, headline, subheadline, SEO title/meta description, and notes about hero layout, text hierarchy, emphasis, and copy presentation saved as Markdown for later landing page copywriting reference.
+description: Capture minimal landing page copy references into this project's language folders. Use when the user provides one or more landing page URLs and wants the service name, one-line service summary, category, link, headline, subheadline, SEO title/meta description, and brief notes about how the headline/subheadline are arranged and emphasized on screen, saved as Markdown for later landing page copywriting reference.
 ---
 
 # Landing Copy Collector
 
 ## Overview
 
-Use this skill to turn landing page URLs into structured Markdown reference notes. Save English pages under `english/` and Korean pages under `korean/`.
+Use this skill to turn landing page URLs into minimal Markdown reference cards. Save English pages under `english/` and Korean pages under `korean/`.
 
 ## Workflow
 
@@ -20,17 +20,13 @@ Use this skill to turn landing page URLs into structured Markdown reference note
    - Service/product name
    - Category, such as `AI writing assistant`, `developer tool`, `CRM`, `analytics platform`, or `consumer finance app`
    - One-line service summary describing what the service does and who it helps
-5. Capture hero copy:
-   - Service/product name
+5. Capture only the main hero copy:
    - Primary headline exactly as visible
    - Subheadline/supporting line exactly as visible
-   - Primary CTA text when visible
-   - Secondary CTA text when visible
-6. Inspect how the copy is presented above the fold. Record concise visual notes about:
-   - Layout: centered, split hero, left-aligned column, dashboard preview, nav relationship, spacing density
-   - Hierarchy: what appears largest, first, repeated, or closest to the CTA
-   - Emphasis: bold words, line breaks, color highlights, badges, eyebrow text, animated/rotating words, underlines
-   - Context: screenshots, product UI, customer logos, trust badges, social proof, pricing hooks, audience cues
+6. Inspect only how the headline and subheadline are presented. Record brief notes about:
+   - Arrangement: centered, left-aligned, split across lines, paired with rotating/dynamic words, placed above/below visual
+   - Emphasis: enlarged words, color highlights, bolding, line breaks, badges/eyebrows directly tied to the headline
+   - Relationship: how the subheadline supports, narrows, or expands the headline
 7. Save one Markdown file per URL using a stable slug:
    - `english/{service-slug}.md`
    - `korean/{service-slug}.md`
@@ -52,8 +48,6 @@ captured_at: "YYYY-MM-DD"
 
 # Service Name
 
-## Service Summary
-
 - Category: ...
 - One-liner: ...
 
@@ -66,33 +60,20 @@ captured_at: "YYYY-MM-DD"
 
 - Headline: ...
 - Subheadline: ...
-- Primary CTA: ...
-- Secondary CTA: ...
 
-## Presentation Notes
+## Placement
 
-- Layout: ...
-- Text hierarchy: ...
+- Arrangement: ...
 - Emphasis: ...
-- Above-the-fold context: ...
-
-## Copy Takeaways
-
-- ...
-- ...
-
-## Raw Notes
-
-- Access notes, uncertainty, or alternate copy variants observed.
+- Headline/subheadline relationship: ...
 ```
 
 ## Quality Rules
 
-- Write `one_liner` as a compact sentence that explains what the service does and who it helps. Prefer observable claims from the page; if the page is vague, infer carefully and mention uncertainty in `Raw Notes`.
+- Write `one_liner` as a compact sentence that explains what the service does and who it helps. Prefer observable claims from the page; if the page is vague, keep the wording conservative.
 - Keep `category` short and reusable so future prompts can group similar services.
-- Preserve visible copy exactly for headline, subheadline, and CTA fields.
-- Keep layout and emphasis notes interpretive but concrete enough to recreate the pattern later.
-- Do not invent missing metadata or copy. Use `Not found` and explain the access limitation in `Raw Notes`.
-- If cookie banners, modals, or geolocation variants affect the view, close only non-destructive overlays and note what changed.
-- Avoid long verbatim page extracts. Capture only the requested landing page elements and short supporting snippets.
+- Preserve visible copy exactly for headline and subheadline.
+- Keep placement notes minimal and limited to headline/subheadline arrangement and emphasis. Do not add broader marketing analysis, CTA notes, product UI descriptions, copy takeaways, or browsing/debug logs.
+- Do not invent missing metadata or copy. Use `Not found` when unavailable.
+- If a headline contains rotating/dynamic words, capture the observed variant and mention that it appears dynamic in `Placement`.
 - After writing the file, tell the user the saved path and summarize the captured headline plus one notable presentation pattern.
