@@ -1,0 +1,4 @@
+interface:
+  display_name: "Landing Copy Collector"
+  short_description: "Archive landing page copy and layout notes"
+  default_prompt: "Use $landing-copy-collector to capture this landing page copy into the appropriate language folder."
